@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		B3E69DDA2AFE8DDF0072CE1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69DD92AFE8DDF0072CE1D /* AppDelegate.swift */; };
 		B3E69DDC2AFE8DDF0072CE1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69DDB2AFE8DDF0072CE1D /* SceneDelegate.swift */; };
-		B3E69DDE2AFE8DDF0072CE1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69DDD2AFE8DDF0072CE1D /* ViewController.swift */; };
 		B3E69DE12AFE8DDF0072CE1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E69DDF2AFE8DDF0072CE1D /* Main.storyboard */; };
 		B3E69DE32AFE8DE10072CE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E69DE22AFE8DE10072CE1D /* Assets.xcassets */; };
 		B3E69DE62AFE8DE10072CE1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E69DE42AFE8DE10072CE1D /* LaunchScreen.storyboard */; };
+		B3E69DF72AFE9A480072CE1D /* infoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69DF62AFE9A480072CE1D /* infoViewController.swift */; };
+		B3E69DF92AFE9CD20072CE1D /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69DF82AFE9CD20072CE1D /* Drinks.swift */; };
+		B3E69E022AFECCFF0072CE1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69E012AFECCFF0072CE1D /* MainViewController.swift */; };
+		B3E69E052AFED1440072CE1D /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69E042AFED1440072CE1D /* LabelViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B3E69DD62AFE8DDF0072CE1D /* AlcoholApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E69DD92AFE8DDF0072CE1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E69DDB2AFE8DDF0072CE1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B3E69DDD2AFE8DDF0072CE1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3E69DE02AFE8DDF0072CE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3E69DE22AFE8DE10072CE1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3E69DE52AFE8DE10072CE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3E69DE72AFE8DE10072CE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3E69DF62AFE9A480072CE1D /* infoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
+		B3E69DF82AFE9CD20072CE1D /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		B3E69E012AFECCFF0072CE1D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B3E69E042AFED1440072CE1D /* LabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,66 @@
 		B3E69DD82AFE8DDF0072CE1D /* AlcoholApp */ = {
 			isa = PBXGroup;
 			children = (
-				B3E69DD92AFE8DDF0072CE1D /* AppDelegate.swift */,
-				B3E69DDB2AFE8DDF0072CE1D /* SceneDelegate.swift */,
-				B3E69DDD2AFE8DDF0072CE1D /* ViewController.swift */,
-				B3E69DDF2AFE8DDF0072CE1D /* Main.storyboard */,
-				B3E69DE22AFE8DE10072CE1D /* Assets.xcassets */,
-				B3E69DE42AFE8DE10072CE1D /* LaunchScreen.storyboard */,
-				B3E69DE72AFE8DE10072CE1D /* Info.plist */,
+				B3E69E032AFED0FC0072CE1D /* views */,
+				B3E69DED2AFE8DFB0072CE1D /* Models */,
+				B3E69DEE2AFE8E050072CE1D /* ViewControllers */,
+				B3E69DEF2AFE8E300072CE1D /* Storyboards */,
+				B3E69DF12AFE8E810072CE1D /* App */,
+				B3E69DF02AFE8E4D0072CE1D /* Resources */,
 			);
 			path = AlcoholApp;
+			sourceTree = "<group>";
+		};
+		B3E69DED2AFE8DFB0072CE1D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3E69DF82AFE9CD20072CE1D /* Drinks.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B3E69DEE2AFE8E050072CE1D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3E69DF62AFE9A480072CE1D /* infoViewController.swift */,
+				B3E69E012AFECCFF0072CE1D /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B3E69DEF2AFE8E300072CE1D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B3E69DE42AFE8DE10072CE1D /* LaunchScreen.storyboard */,
+				B3E69DDF2AFE8DDF0072CE1D /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B3E69DF02AFE8E4D0072CE1D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3E69DE22AFE8DE10072CE1D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B3E69DF12AFE8E810072CE1D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B3E69DE72AFE8DE10072CE1D /* Info.plist */,
+				B3E69DDB2AFE8DDF0072CE1D /* SceneDelegate.swift */,
+				B3E69DD92AFE8DDF0072CE1D /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B3E69E032AFED0FC0072CE1D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B3E69E042AFED1440072CE1D /* LabelViewCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E69DDE2AFE8DDF0072CE1D /* ViewController.swift in Sources */,
+				B3E69DF92AFE9CD20072CE1D /* Drinks.swift in Sources */,
 				B3E69DDA2AFE8DDF0072CE1D /* AppDelegate.swift in Sources */,
+				B3E69DF72AFE9A480072CE1D /* infoViewController.swift in Sources */,
 				B3E69DDC2AFE8DDF0072CE1D /* SceneDelegate.swift in Sources */,
+				B3E69E022AFECCFF0072CE1D /* MainViewController.swift in Sources */,
+				B3E69E052AFED1440072CE1D /* LabelViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AlcoholApp/Info.plist;
+				INFOPLIST_FILE = AlcoholApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -306,9 +366,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.AlcoholApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AlcoholApp/Info.plist;
+				INFOPLIST_FILE = AlcoholApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -333,9 +396,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.AlcoholApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
