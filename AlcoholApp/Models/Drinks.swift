@@ -8,13 +8,12 @@
 import Foundation
 
 
-struct Drink: Decodable{
-    let strDrink : String
-    let strDrinkThumb : String
-    let idDrink : Int
+struct Drink: Codable {
+    let strDrink: String
+    let strDrinkThumb: String
+    let idDrink: String
 }
-let drinks = [Drink]()
 
-
-
-
+struct DrinkList: Codable {
+    let drinks: [Drink]
+}

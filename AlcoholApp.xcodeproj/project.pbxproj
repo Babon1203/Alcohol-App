@@ -47,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				B3E69DD82AFE8DDF0072CE1D /* AlcoholApp */,
+				B3E69DF02AFE8E4D0072CE1D /* Resources */,
 				B3E69DD72AFE8DDF0072CE1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,7 +68,6 @@
 				B3E69DEE2AFE8E050072CE1D /* ViewControllers */,
 				B3E69DEF2AFE8E300072CE1D /* Storyboards */,
 				B3E69DF12AFE8E810072CE1D /* App */,
-				B3E69DF02AFE8E4D0072CE1D /* Resources */,
 			);
 			path = AlcoholApp;
 			sourceTree = "<group>";

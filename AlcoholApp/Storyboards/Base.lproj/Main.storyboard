@@ -10,88 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Список-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="AlcoholApp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U8Q-4U-cGz">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6au-5q-fjA">
-                                    <size key="itemSize" width="332" height="73"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pressedCell" id="Vpl-XE-gJE" customClass="LabelViewCell" customModule="AlcoholApp" customModuleProvider="target">
-                                        <rect key="frame" x="30.666666666666668" y="0.0" width="332" height="73"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n9F-a7-MIp">
-                                            <rect key="frame" x="0.0" y="0.0" width="332" height="73"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYK-rG-fjA">
-                                                    <rect key="frame" x="130.66666666666666" y="18.666666666666671" width="71" height="36"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="OYK-rG-fjA" firstAttribute="centerY" secondItem="n9F-a7-MIp" secondAttribute="centerY" id="9Pn-yU-zVU"/>
-                                                <constraint firstItem="OYK-rG-fjA" firstAttribute="centerX" secondItem="n9F-a7-MIp" secondAttribute="centerX" id="nRC-oN-cnX"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <integer key="value" value="20"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="332" height="73"/>
-                                        <connections>
-                                            <outlet property="pressLabel" destination="OYK-rG-fjA" id="JIw-yh-7Qq"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="nrD-0W-lH5"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ldN-oW-TF3"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="U8Q-4U-cGz" secondAttribute="bottom" id="L3V-RQ-d5x"/>
-                            <constraint firstItem="U8Q-4U-cGz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MZf-GM-L8A"/>
-                            <constraint firstItem="U8Q-4U-cGz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aah-3V-HWW"/>
-                            <constraint firstItem="U8Q-4U-cGz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tqB-og-RW2"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Список" id="V3h-Kl-0so"/>
-                    <connections>
-                        <segue destination="KGz-OI-t4U" kind="showDetail" identifier="showInfo" id="ZcY-rI-Ynv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="919.84732824427476" y="-28.169014084507044"/>
-        </scene>
         <!--Info View Controller-->
         <scene sceneID="4CZ-AV-B8G">
             <objects>
                 <viewController id="KGz-OI-t4U" customClass="infoViewController" customModule="AlcoholApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FvM-6A-Wh6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="scu-W6-88X">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Lzp-Yq-LIB">
                                 <rect key="frame" x="161" y="388" width="71" height="67"/>
@@ -125,12 +53,70 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eRS-HG-JhR"/>
+                        <segue destination="TKL-rV-i7g" kind="relationship" relationship="rootViewController" id="ezq-ms-D2B"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wu-lt-ju0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="122.90076335877862" y="-28.169014084507044"/>
+        </scene>
+        <!--СПИСОК-->
+        <scene sceneID="kxP-PQ-VbS">
+            <objects>
+                <collectionViewController id="TKL-rV-i7g" customClass="MainViewController" customModule="AlcoholApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wjR-Cp-x8U">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8dq-Gz-Snq">
+                            <size key="itemSize" width="365" height="119"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="center" reuseIdentifier="pressedLabel" id="Vsf-s0-ETA" customClass="LabelViewCell" customModule="AlcoholApp">
+                                <rect key="frame" x="14" y="0.0" width="365" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="B3T-Ud-n1B" customClass="LabelViewCell" customModule="AlcoholApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="365" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-Zd-Nus">
+                                            <rect key="frame" x="147" y="41.666666666666664" width="71" height="35.999999999999993"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="m2L-Zd-Nus" firstAttribute="centerY" secondItem="B3T-Ud-n1B" secondAttribute="centerY" id="ILl-yr-Qp4"/>
+                                        <constraint firstItem="m2L-Zd-Nus" firstAttribute="centerX" secondItem="B3T-Ud-n1B" secondAttribute="centerX" id="ibq-HI-oAj"/>
+                                    </constraints>
+                                    <variation key="widthClass=compact" hidden="NO"/>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="365" height="119"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="pressLabel" destination="m2L-Zd-Nus" id="t5p-k9-JhS"/>
+                                    <segue destination="KGz-OI-t4U" kind="show" identifier="show" id="XMK-lG-fOQ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="TKL-rV-i7g" id="t7F-fV-4QW"/>
+                            <outlet property="delegate" destination="TKL-rV-i7g" id="aZc-fL-gAa"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="СПИСОК" id="0FY-8W-RVx"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="paQ-gt-QKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988.54961832061065" y="-28.169014084507044"/>
         </scene>
     </scenes>
     <resources>
