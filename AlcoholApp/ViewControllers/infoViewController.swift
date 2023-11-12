@@ -9,9 +9,12 @@ import UIKit
 
 class infoViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
 }

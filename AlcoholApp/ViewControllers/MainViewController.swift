@@ -40,7 +40,6 @@ final class MainViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(LabelViewCell.self, forCellWithReuseIdentifier: "show")
         
         alcohol()
     }
@@ -49,24 +48,22 @@ final class MainViewController: UICollectionViewController {
         let alert = UIAlertController(title: status.title, message: status.message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
-        DispatchQueue.main.async { [unowned self] in
-            present(alert, animated: true)
+        present(alert, animated: true)
         }
     }
-}
 
 extension MainViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return drinks.count
+       drinks.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "show", for: indexPath) as? LabelViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pressedLabel", for: indexPath) as? LabelViewCell else {
             return UICollectionViewCell()
         }
         
         let drink = drinks[indexPath.item]
-        cell.pressLabel.text = drink.strDrink
+        cell.pressLabel.self.text = drink.strDrink
         
         return cell
     }
@@ -74,7 +71,7 @@ extension MainViewController {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 48, height: 100)
+        return CGSize(width: UIScreen.main.bounds.width - 48, height: 50)
     }
 }
 
@@ -83,9 +80,8 @@ extension MainViewController {
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
-                DispatchQueue.main.async { [weak self] in
-                    self?.showAlert(withStatus: .failed)
-                }
+                self?.showAlert(withStatus: .failed)
+                
                 return
             }
             
@@ -93,19 +89,21 @@ extension MainViewController {
             do {
                 let drinkList = try jsonDecoder.decode(DrinkList.self, from: data)
                 let drinks = drinkList.drinks
-                DispatchQueue.main.async { [weak self] in
+                print(drinks)
+                self?.drinks = drinks
+                DispatchQueue.main.async {
                     self?.showAlert(withStatus: .success)
                     self?.collectionView.reloadData()
-                    print(drinks)
+                    
                 }
-            } catch {
-                DispatchQueue.main.async { [weak self] in
-                    self?.showAlert(withStatus: .failed)
-                    print(error.localizedDescription)
-                }
+            }
+            catch {
+                self?.showAlert(withStatus: .failed)
+                print(error.localizedDescription)
             }
         }
         task.resume()
     }
 }
+
 
