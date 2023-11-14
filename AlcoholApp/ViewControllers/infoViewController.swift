@@ -18,7 +18,9 @@ final class infoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        coctails()
         tableView.rowHeight = 100
+        
     }
 
     // MARK: - Table view data source
@@ -42,7 +44,7 @@ final class infoViewController: UITableViewController {
 
 // MARK: - Networking
 extension infoViewController {
-    func coctails() {
+func coctails() {
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data else {
                 print(error as Any)
@@ -54,8 +56,10 @@ extension infoViewController {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 self?.drinks = try decoder.decode([Drink].self, from: data)
                 DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                    self?.tableView.reloadData()
+                    
                 }
+                
             } catch let error {
                 print(error.localizedDescription)
             }

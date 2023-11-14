@@ -39,8 +39,24 @@ final class MainViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        InfoCoctail()
+        
 
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        drinks.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pressLabel", for: indexPath)
+          guard let cell = cell as? LabelViewCell else { return UICollectionViewCell()}
+        
+        let drink = drinks[indexPath.item]
+        cell.pressLabel.text = drink.strDrink
+        
+        return cell
+    }
+    
     private func InfoCoctail() {
         networkManager.Info(DrinkList.self, from: url) { [unowned self] result in
             switch result {
@@ -70,20 +86,20 @@ final class MainViewController: UICollectionViewController {
 }
 
 extension MainViewController {
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        drinks.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pressedLabel", for: indexPath) as? LabelViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        let drink = drinks[indexPath.item]
-        cell.pressLabel.text = drink.strDrink
-        
-        return cell
-    }
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        drinks.count
+//    }
+//    
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pressLabel", for: indexPath) as? LabelViewCell else {
+//            return UICollectionViewCell()
+//        }
+//        
+//        let drink = drinks[indexPath.item]
+//        cell.pressLabel.text = drink.strDrink
+//        
+//        return cell
+//    }
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {

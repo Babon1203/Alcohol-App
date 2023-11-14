@@ -9,9 +9,6 @@ import Foundation
 
 var url: URL = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic" )!
 
-//enum Link {
-//    var url: URL = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic" )!
-//}
 
 enum NetworkError: Error {
     case invalidURL
@@ -24,34 +21,24 @@ final class NetworkManager {
     
     private init() {}
     
-//    func Image(from url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
-//        DispatchQueue.global().async {
-//            guard let imageData = try? Data(contentsOf: url) else {
-//                completion(.failure(.noData))
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                completion(.success(imageData))
-//            }
-//        }
-//    }
+
     
-    func Info<T: Decodable>(_ type: T.Type, from url: URL, comletion: @escaping(Result<T, NetworkError>) -> Void) {
+    func Info<T: Decodable>(_ type: T.Type, from url: URL, completion: @escaping(Result<T, NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data else {
-                comletion(.failure(.noData))
+                completion(.failure(.noData))
                 return
             }
             
             do {
                 let decoder = JSONDecoder()
-                //decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let type = try decoder.decode(T.self, from: data)
                 DispatchQueue.main.async {
-                    comletion(.success(type))
+                    completion(.success(type))
                 }
             } catch {
-                comletion(.failure(.decodingError))
+                completion(.failure(.decodingError))
             }
             
         }.resume()
