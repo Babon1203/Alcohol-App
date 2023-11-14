@@ -1,58 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0sP-dq-an1">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Info View Controller-->
-        <scene sceneID="4CZ-AV-B8G">
-            <objects>
-                <viewController id="KGz-OI-t4U" customClass="infoViewController" customModule="AlcoholApp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FvM-6A-Wh6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="scu-W6-88X">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                            </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Lzp-Yq-LIB">
-                                <rect key="frame" x="161" y="388" width="71" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" name="AccentColor"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="nXE-uT-VQN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="scu-W6-88X" firstAttribute="leading" secondItem="nXE-uT-VQN" secondAttribute="leading" id="eaG-kI-nOc"/>
-                            <constraint firstItem="nXE-uT-VQN" firstAttribute="trailing" secondItem="scu-W6-88X" secondAttribute="trailing" id="iz2-5o-X3L"/>
-                            <constraint firstItem="nXE-uT-VQN" firstAttribute="bottom" secondItem="scu-W6-88X" secondAttribute="bottom" id="nPE-s7-gaX"/>
-                            <constraint firstItem="scu-W6-88X" firstAttribute="top" secondItem="nXE-uT-VQN" secondAttribute="top" id="p7u-Cy-n3c"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="DKA-5H-WvB"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="Lzp-Yq-LIB" id="ih5-gb-RYt"/>
-                        <outlet property="imageView" destination="scu-W6-88X" id="OM6-2I-ua0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="34r-Ki-v0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1849.6183206106869" y="-28.169014084507044"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="eHU-lh-dut">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0sP-dq-an1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SGd-qS-gff">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -69,7 +31,7 @@
             <objects>
                 <collectionViewController id="TKL-rV-i7g" customClass="MainViewController" customModule="AlcoholApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wjR-Cp-x8U">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8dq-Gz-Snq">
@@ -80,9 +42,9 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="center" reuseIdentifier="pressedLabel" id="Vsf-s0-ETA" customClass="LabelViewCell" customModule="AlcoholApp">
-                                <rect key="frame" x="14" y="0.0" width="365" height="119"/>
+                                <rect key="frame" x="32.666666666666664" y="0.0" width="365" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="B3T-Ud-n1B" customClass="LabelViewCell" customModule="AlcoholApp" customModuleProvider="target">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="B3T-Ud-n1B" customClass="LabelViewCell" customModule="AlcoholApp">
                                     <rect key="frame" x="0.0" y="0.0" width="365" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -97,7 +59,6 @@
                                         <constraint firstItem="m2L-Zd-Nus" firstAttribute="centerY" secondItem="B3T-Ud-n1B" secondAttribute="centerY" id="ILl-yr-Qp4"/>
                                         <constraint firstItem="m2L-Zd-Nus" firstAttribute="centerX" secondItem="B3T-Ud-n1B" secondAttribute="centerX" id="ibq-HI-oAj"/>
                                     </constraints>
-                                    <variation key="widthClass=compact" hidden="NO"/>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="365" height="119"/>
@@ -108,7 +69,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="pressLabel" destination="m2L-Zd-Nus" id="t5p-k9-JhS"/>
-                                    <segue destination="KGz-OI-t4U" kind="show" identifier="show" id="XMK-lG-fOQ"/>
+                                    <segue destination="gVA-ST-RHs" kind="show" identifier="showSegue" id="52d-xk-Gy4"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -123,11 +84,82 @@
             </objects>
             <point key="canvasLocation" x="988.54961832061065" y="-28.169014084507044"/>
         </scene>
+        <!--ИНФОРМАЦИЯ-->
+        <scene sceneID="FLp-vK-wOT">
+            <objects>
+                <tableViewController title="ИНФОРМАЦИЯ" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="gVA-ST-RHs" customClass="infoViewController" customModule="AlcoholApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7se-gD-CUX">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="kcH-dg-4kM" customClass="TableViewCell" customModule="AlcoholApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="430" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kcH-dg-4kM" id="Mzh-CM-7NZ" customClass="TableViewCell" customModule="AlcoholApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="430" height="72"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C39-CV-2bi">
+                                            <rect key="frame" x="240" y="0.0" width="59" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-Vj-KNb">
+                                            <rect key="frame" x="20" y="-28" width="88" height="100"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNz-Zk-4RP">
+                                            <rect key="frame" x="240" y="38" width="59" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="C39-CV-2bi" secondAttribute="trailing" constant="131" id="1rL-xC-1uF"/>
+                                        <constraint firstAttribute="trailing" secondItem="wNz-Zk-4RP" secondAttribute="trailing" constant="131" id="7Ok-hp-jp2"/>
+                                        <constraint firstItem="C39-CV-2bi" firstAttribute="top" secondItem="Mzh-CM-7NZ" secondAttribute="top" id="L3N-8K-hsH"/>
+                                        <constraint firstAttribute="bottom" secondItem="qWK-Vj-KNb" secondAttribute="bottom" id="NWB-oM-zxJ"/>
+                                        <constraint firstItem="wNz-Zk-4RP" firstAttribute="top" secondItem="C39-CV-2bi" secondAttribute="bottom" constant="8" symbolic="YES" id="X8y-gV-YV4"/>
+                                        <constraint firstItem="C39-CV-2bi" firstAttribute="leading" secondItem="qWK-Vj-KNb" secondAttribute="trailing" constant="132" id="aBT-rn-NVu"/>
+                                        <constraint firstItem="C39-CV-2bi" firstAttribute="top" secondItem="Mzh-CM-7NZ" secondAttribute="top" id="j1w-HQ-dif"/>
+                                        <constraint firstItem="wNz-Zk-4RP" firstAttribute="leading" secondItem="qWK-Vj-KNb" secondAttribute="trailing" constant="132" id="mYV-92-lxm"/>
+                                        <constraint firstItem="wNz-Zk-4RP" firstAttribute="top" secondItem="C39-CV-2bi" secondAttribute="bottom" constant="8" symbolic="YES" id="sLW-nT-N8f"/>
+                                        <constraint firstItem="qWK-Vj-KNb" firstAttribute="leading" secondItem="Mzh-CM-7NZ" secondAttribute="leading" constant="20" symbolic="YES" id="tMS-3e-tEm"/>
+                                        <constraint firstItem="qWK-Vj-KNb" firstAttribute="top" secondItem="Mzh-CM-7NZ" secondAttribute="top" constant="-28" id="wW1-tO-9mG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="idCoctail" destination="Mzh-CM-7NZ" id="AmJ-Gp-neA"/>
+                                    <outlet property="imageCoctail" destination="qWK-Vj-KNb" id="wSU-ma-yRl"/>
+                                    <outlet property="nameCoctail" destination="Mzh-CM-7NZ" id="9Qd-Pr-G3p"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gVA-ST-RHs" id="oV8-WQ-PI3"/>
+                            <outlet property="delegate" destination="gVA-ST-RHs" id="tPY-PW-odz"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="ИНФОРМАЦИЯ" leftItemsSupplementBackButton="YES" customizationIdentifier="back" id="yhg-i2-v5m">
+                        <barButtonItem key="backBarButtonItem" title="НАЗАД" id="0FW-f9-kSE"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fy-66-wec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788.8372093023256" y="-29.613733905579402"/>
+        </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

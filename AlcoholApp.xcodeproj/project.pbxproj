@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B359680F2B03D989009DE517 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B359680E2B03D989009DE517 /* NetworkManager.swift */; };
+		B35968132B03DDCB009DE517 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35968122B03DDCB009DE517 /* TableViewCell.swift */; };
 		B3E69DDA2AFE8DDF0072CE1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69DD92AFE8DDF0072CE1D /* AppDelegate.swift */; };
 		B3E69DDC2AFE8DDF0072CE1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E69DDB2AFE8DDF0072CE1D /* SceneDelegate.swift */; };
 		B3E69DE12AFE8DDF0072CE1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E69DDF2AFE8DDF0072CE1D /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B359680E2B03D989009DE517 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B35968122B03DDCB009DE517 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B3E69DD62AFE8DDF0072CE1D /* AlcoholApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E69DD92AFE8DDF0072CE1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E69DDB2AFE8DDF0072CE1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B359680D2B03D948009DE517 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B359680E2B03D989009DE517 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B3E69DCD2AFE8DDF0072CE1D = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +75,8 @@
 		B3E69DD82AFE8DDF0072CE1D /* AlcoholApp */ = {
 			isa = PBXGroup;
 			children = (
-				B3E69E032AFED0FC0072CE1D /* views */,
+				B359680D2B03D948009DE517 /* Services */,
+				B3E69E032AFED0FC0072CE1D /* Views */,
 				B3E69DED2AFE8DFB0072CE1D /* Models */,
 				B3E69DEE2AFE8E050072CE1D /* ViewControllers */,
 				B3E69DEF2AFE8E300072CE1D /* Storyboards */,
@@ -116,12 +129,13 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		B3E69E032AFED0FC0072CE1D /* views */ = {
+		B3E69E032AFED0FC0072CE1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B3E69E042AFED1440072CE1D /* LabelViewCell.swift */,
+				B35968122B03DDCB009DE517 /* TableViewCell.swift */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +210,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E69DF92AFE9CD20072CE1D /* Drinks.swift in Sources */,
+				B35968132B03DDCB009DE517 /* TableViewCell.swift in Sources */,
 				B3E69DDA2AFE8DDF0072CE1D /* AppDelegate.swift in Sources */,
 				B3E69DF72AFE9A480072CE1D /* infoViewController.swift in Sources */,
+				B359680F2B03D989009DE517 /* NetworkManager.swift in Sources */,
 				B3E69DDC2AFE8DDF0072CE1D /* SceneDelegate.swift in Sources */,
 				B3E69E022AFECCFF0072CE1D /* MainViewController.swift in Sources */,
 				B3E69E052AFED1440072CE1D /* LabelViewCell.swift in Sources */,

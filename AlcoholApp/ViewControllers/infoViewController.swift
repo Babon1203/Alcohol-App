@@ -7,14 +7,59 @@
 
 import UIKit
 
-class infoViewController: UIViewController {
+final class infoViewController: UITableViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    private var drinks: [Drink] = []
+    
+    
+    //private let networkManager = NetworkManager.shared
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 100
+    }
+
+    // MARK: - Table view data source
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        drinks.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = cell as? TableViewCell else { return UITableViewCell() }
         
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
+        let drink = drinks[indexPath.row]
+        cell.nameCoctail.text = drink.strDrink
+        cell.idCoctail.text = drink.idDrink
+        
+
+        return cell
+    }
+
+}
+
+// MARK: - Networking
+extension infoViewController {
+    func coctails() {
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let data = data else {
+                print(error as Any)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                self?.drinks = try decoder.decode([Drink].self, from: data)
+                DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            
+        }.resume()
     }
 }
