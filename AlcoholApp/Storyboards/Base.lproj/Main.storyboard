@@ -100,43 +100,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="430" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIk-UU-F7S">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIk-UU-F7S">
                                             <rect key="frame" x="121" y="37" width="289" height="64"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="289" id="xy5-Hl-IbK"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wvV-Hv-7Xw">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvV-Hv-7Xw">
                                             <rect key="frame" x="0.0" y="0.0" width="139" height="101"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="139" id="2Cj-rK-Gdm"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUh-5h-ayC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUh-5h-ayC">
                                             <rect key="frame" x="121" y="11" width="289" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="wvV-Hv-7Xw" firstAttribute="leading" secondItem="Mzh-CM-7NZ" secondAttribute="leadingMargin" constant="-20" id="2mt-Fj-ISl"/>
-                                        <constraint firstItem="xIk-UU-F7S" firstAttribute="trailing" secondItem="KUh-5h-ayC" secondAttribute="trailing" id="7Rz-Z1-V3B"/>
-                                        <constraint firstItem="KUh-5h-ayC" firstAttribute="top" secondItem="Mzh-CM-7NZ" secondAttribute="topMargin" id="AHM-xp-Tri"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="KUh-5h-ayC" secondAttribute="bottom" constant="50" id="F8D-27-wOB"/>
-                                        <constraint firstItem="wvV-Hv-7Xw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mzh-CM-7NZ" secondAttribute="leading" id="MEu-xz-bLi"/>
-                                        <constraint firstItem="xIk-UU-F7S" firstAttribute="trailing" secondItem="Mzh-CM-7NZ" secondAttribute="trailingMargin" id="RCV-he-EGh"/>
-                                        <constraint firstItem="wvV-Hv-7Xw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mzh-CM-7NZ" secondAttribute="top" id="Tct-F5-u2m"/>
-                                        <constraint firstItem="wvV-Hv-7Xw" firstAttribute="top" secondItem="Mzh-CM-7NZ" secondAttribute="topMargin" constant="-11" id="Tok-9t-dAt"/>
-                                        <constraint firstItem="wvV-Hv-7Xw" firstAttribute="bottom" secondItem="xIk-UU-F7S" secondAttribute="bottom" id="ZOj-do-pbA"/>
-                                        <constraint firstItem="xIk-UU-F7S" firstAttribute="leading" secondItem="KUh-5h-ayC" secondAttribute="leading" id="cCa-Nr-N7i"/>
-                                        <constraint firstItem="xIk-UU-F7S" firstAttribute="top" secondItem="Mzh-CM-7NZ" secondAttribute="topMargin" constant="26" id="eMb-H2-pwS"/>
-                                        <constraint firstItem="wvV-Hv-7Xw" firstAttribute="centerY" secondItem="Mzh-CM-7NZ" secondAttribute="centerY" id="mkF-0F-kpN"/>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wvV-Hv-7Xw" secondAttribute="bottom" id="vie-AS-fgu"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <userDefinedRuntimeAttributes>

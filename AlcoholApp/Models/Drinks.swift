@@ -19,19 +19,19 @@ struct Drink: Codable {
         self.idDrink = idDrink
     }
     
-    init(drinkData:[String: String]) {
-        strDrink = drinkData["strDrink"] ?? ""
-        strDrinkThumb = drinkData["strDrinkThumb"] ?? ""
-        idDrink = drinkData["idDrink"] ?? ""
+    init(drinkData:[String: Any]) {
+        strDrink = drinkData["strDrink"] as? String ?? ""
+        strDrinkThumb = drinkData["strDrinkThumb"] as? String ?? ""
+        idDrink = drinkData["idDrink"] as? String ?? ""
         
     }
     static func getCoctail(from value: Any) -> [Drink] {
-        guard let drinksData = value as? [[String: String]] else { return []}
+        guard let drinksData = value as? [String: Any] else { return []}
          var coctail = [Drink]()
 
-        for drinkData in drinksData{
-            let drink = Drink(drinkData: drinkData)
-         coctail.append(drink)
+        for _ in drinksData {
+            let drink = Drink(drinkData: drinksData)
+            coctail.append(drink)
         }
         return coctail
         

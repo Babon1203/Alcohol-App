@@ -29,20 +29,6 @@ final class TableViewCell: UITableViewCell {
             }
         }
         
-        
-        
-//
-//        if let imageUrl = URL(string: drink.strDrinkThumb) {
-//            URLSession.shared.dataTask(with: imageUrl) { data, response, error in
-//                guard let data = data, let image = UIImage(data: data) else { return }
-//                
-//                DispatchQueue.main.async {
-//                    self.imageCoctail.image = image
-//                }
-//            }.resume()
-//        }
     }
 }
-
-
 

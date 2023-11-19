@@ -23,13 +23,13 @@ final class MainViewController: UICollectionViewController {
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSegue" {
-            guard segue.destination is infoViewController else { return }
-            
-            
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showSegue" {
+//            guard segue.destination is infoViewController else { return }
+//            
+//            
+//        }
+//    }
     
 }
 

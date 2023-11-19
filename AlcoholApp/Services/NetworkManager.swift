@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-var url: URL = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic" )!
+var url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic" )!
 
 
 enum NetworkError: Error {
@@ -22,7 +22,7 @@ final class NetworkManager {
     
     private init() {}
     
-    func fetchCoctail(from url: URL, completion: @escaping(Result<[Drink], AFError>) -> Void) {
+    func fetchCoctail(from url: URL , completion: @escaping(Result<[Drink], AFError>) -> Void) {
         AF.request(url)
             .validate()
             .responseJSON { response in
@@ -49,18 +49,7 @@ final class NetworkManager {
             }
     }
     
-    func sendPostRequest(to url: URL, with data: Drink, completion: @escaping(Result<Drink, AFError>) -> Void) {
-        AF.request(url, method:  . post, parameters: data)
-            .validate()
-            .responseDecodable(of: Drink.self) { dataResponse in
-                switch dataResponse.result {
-                case .success(let drink):
-                    completion(.success(drink))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
-    }
+   
     
 }
 
