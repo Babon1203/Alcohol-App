@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LabelViewCell: UICollectionViewCell {
+final class LabelViewCell: UICollectionViewCell {
     
     @IBOutlet weak var pressLabel: UILabel!
 }

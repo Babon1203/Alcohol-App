@@ -6,64 +6,53 @@
 //
 
 import UIKit
+import Alamofire
+
+
 
 final class infoViewController: UITableViewController {
-    
+   
+    var url: URL = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic" )!
+
     private var drinks: [Drink] = []
-    
-    
-    //private let networkManager = NetworkManager.shared
-    
-    
+ 
+    private let networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coctails()
-        tableView.rowHeight = 100
         
+        tableView.rowHeight = 100
+        fetchDrink()
     }
-
-    // MARK: - Table view data source
+    
+    private func fetchDrink() {
+        networkManager.fetchCoctail(from: url) { result in
+            switch result {
+            case .success(let drinks):
+                
+                self.drinks = drinks
+                self.tableView.reloadData()
+                print(drinks)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         drinks.count
+        
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         guard let cell = cell as? TableViewCell else { return UITableViewCell() }
-        
         let drink = drinks[indexPath.row]
-        cell.nameCoctail.text = drink.strDrink
-        cell.idCoctail.text = drink.idDrink
+        cell.configure(with: drink)
         
-
+        cell.layer.borderWidth = 10
+        cell.layer.borderColor = UIColor.white.cgColor
+        
         return cell
-    }
-
-}
-
-// MARK: - Networking
-extension infoViewController {
-func coctails() {
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data else {
-                print(error as Any)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self?.drinks = try decoder.decode([Drink].self, from: data)
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                    
-                }
-                
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
-        }.resume()
     }
 }

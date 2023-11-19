@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 var url: URL = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic" )!
 
@@ -21,26 +22,45 @@ final class NetworkManager {
     
     private init() {}
     
-
-    
-    func Info<T: Decodable>(_ type: T.Type, from url: URL, completion: @escaping(Result<T, NetworkError>) -> Void) {
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data else {
-                completion(.failure(.noData))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let type = try decoder.decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(type))
+    func fetchCoctail(from url: URL, completion: @escaping(Result<[Drink], AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let drinks = Drink.getCoctail(from: value)
+                    completion(.success(drinks))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
-            } catch {
-                completion(.failure(.decodingError))
             }
-            
-        }.resume()
     }
+    func fetchData(from url: String,completion: @escaping(Result<Data, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { DataResponse in
+                switch DataResponse.result {
+                    
+                case .success(let imageData):
+                    completion(.success(imageData))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func sendPostRequest(to url: URL, with data: Drink, completion: @escaping(Result<Drink, AFError>) -> Void) {
+        AF.request(url, method:  . post, parameters: data)
+            .validate()
+            .responseDecodable(of: Drink.self) { dataResponse in
+                switch dataResponse.result {
+                case .success(let drink):
+                    completion(.success(drink))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
 }
+
